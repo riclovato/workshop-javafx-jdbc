@@ -10,6 +10,12 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	// Método start() é onde a aplicação JavaFX é iniciada
+	
+	private static Scene mainScene;
+	
+	
+	
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -22,7 +28,7 @@ public class Main extends Application {
 			scrollPane.setFitToWidth(true);
 			
 			// Criando uma cena para a view carregada
-			Scene mainScene = new Scene(scrollPane);
+			mainScene = new Scene(scrollPane);
 			// Setando a cena no palco principal
 			primaryStage.setScene(mainScene);
 			// Definindo o título do palco principal
@@ -35,6 +41,9 @@ public class Main extends Application {
 		}
 	}
 
+	public static Scene getMainScene() {
+		return mainScene;
+	}
 	// Método main() que é chamado quando a aplicação é iniciada
 	public static void main(String[] args) {
 		// Chama o método launch() da classe Application, iniciando a aplicação JavaFX
